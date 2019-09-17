@@ -17,7 +17,7 @@ public class YEET {
         //read image
         try {
         	
-            f = new File("ImageIn/IMG_9367 copy.jpg");
+            f = new File("ImageIn/Yeet.jpg");
             img = ImageIO.read(f);
 
         } catch (IOException e) {
@@ -38,25 +38,27 @@ public class YEET {
                 
           
                    //pixel argb values
-                    int a = pxl & 0xff;
-                    int r = pxl & 0xff;
-                    int g = pxl & 0xff;
-                    int b = pxl & 0xff;
+                    int a = (pxl >>> 24) & 0xFF;
+                    int r = (pxl >>> 16) & 0xFF;
+                    int g = (pxl >>>  8) & 0xFF;
+                    int b = (pxl >>>  0) & 0xFF;
                     
-                    int a2 = pxl2 & 0xff;
-                    int r2 = pxl2 & 0xff;
-                    int g2 = pxl2 & 0xff;
-                    int b2 = pxl2 & 0xff;
+                    //System.out.println(a + "+" + r + "+" + g + "+" + b);
                     
-                    int a3 = pxl3 & 0xff;
-                    int r3 = pxl3 & 0xff;
-                    int g3 = pxl3 & 0xff;
-                    int b3 = pxl3 & 0xff;
+                    int a2 = (pxl >>> 24) & 0xFF;
+                    int r2 = (pxl >>> 16) & 0xFF;
+                    int g2 = (pxl >>>  8) & 0xFF;
+                    int b2 = (pxl >>>  0) & 0xFF;
                     
-                    int a4 = pxl4 & 0xff;
-                    int r4 = pxl4 & 0xff;
-                    int g4 = pxl4 & 0xff;
-                    int b4 = pxl4 & 0xff;
+                    int a3 = (pxl >>> 24) & 0xFF;
+                    int r3 = (pxl >>> 16) & 0xFF;
+                    int g3 = (pxl >>>  8) & 0xFF;
+                    int b3 = (pxl >>>  0) & 0xFF;
+                    
+                    int a4 = (pxl >>> 24) & 0xFF;
+                    int r4 = (pxl >>> 16) & 0xFF;
+                    int g4 = (pxl >>>  8) & 0xFF;
+                    int b4 = (pxl >>>  0) & 0xFF;
                   //System.out.println(pxl);
            
                     int A0 = (a/4 + a2/4 + a3/4 + a4/4);
@@ -66,10 +68,15 @@ public class YEET {
                     
                    // if (A0/4 + R0/4 + G0/4 + B0/4 < 150) {
                     	if (A0/4 + R0/4 + G0/4 + B0/4 < 127) {
-                    	pxl = A0 |(R0/4) | (G0/4) | (B0/4) ;
-                    	pxl2 = A0 |(R0/4) | (G0/4) | (B0/4) ;
-                    	pxl3 = A0 |(R0/4) | (G0/4) | (B0/4) ;
-                    	pxl4 = A0 |(R0/4) | (G0/4) | (B0/4) ;
+                    	/*pxl = (A0/4) |(R0/4) | (G0/4) | (B0/4) ;
+                    	pxl2 = (A0/4) |(R0/4) | (G0/4) | (B0/4) ;
+                    	pxl3 = (A0/4) |(R0/4) | (G0/4) | (B0/4) ;
+                    	pxl4 = (A0/4) |(R0/4) | (G0/4) | (B0/4) ;*/
+                    		
+                    		pxl = A0 |R0 | G0 | B0 ;
+                        	pxl2 = A0 |R0 | G0 | B0 ;
+                        	pxl3 = A0 |R0 | G0 | B0 ;
+                        	pxl4 = A0 |R0 | G0 | B0 ;
                     	
                     	
                     	}
@@ -85,7 +92,7 @@ public class YEET {
             }
         }
 
-        ImageIO.write(img, "jpg", new File("ImageOut/IMG_9367 copy.jpg"));
+        ImageIO.write(img, "jpg", new File("ImageOut/Yeet.jpg"));
         
         System.out.println(width);
         System.out.println(height);
