@@ -1,0 +1,136 @@
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.lang.Math;
+
+public class YEET_PLZ_NO_BLUE {
+
+	public static void main(String[] args) throws IOException {
+		BufferedImage img = null;
+        File f = null;
+
+        //read image
+        try {
+        	
+            f = new File("ImageIn/_MG_5281 copy.jpg");
+            img = ImageIO.read(f);
+
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
+        int width = img.getWidth();
+        int height = img.getHeight();
+
+        int size = 800;
+       
+        
+        //scan the image
+       /* for (int x = 0; x < width - size; x++) {
+            for (int y = 0; y < height - size; y++) {
+            	
+            	int r0 = 0;
+            	int g0 = 0;
+            	int b0 = 0;
+            	
+            	Color pxl_idk = new Color(img.getRGB(x, y));
+            	int r = pxl_idk.getRed();
+    			int g = pxl_idk.getGreen();
+            	int b = pxl_idk.getBlue();
+            	
+            	if (r==0) r=1;
+            	
+            	if (g==0) g=1;
+            		
+            	if (b==0) b=1;
+            	
+            	
+            	for (int x1 = 0; x1 < size; x1++) {
+            		for (int y1 = 0; y1 < size; y1++) {
+            			
+            			Color pxl = new Color(img.getRGB(x+x1, y+y1));
+                    	
+            			
+            			r0 += pxl.getRed();
+            			g0 += pxl.getGreen();
+                    	b0 += pxl.getBlue();
+                    	
+            		}
+            	}
+            	*/
+       
+        for (int x =0; x < width - size; x+=size) {
+        	for (int y =0; y < height - size; y+=size) {
+        		
+        		int r0 = 0;
+        		int g0=0;
+        		int b0=0;
+        		
+        		
+        		
+        		for (int x1=0; x1 < size; x1++) {
+        			for (int y1=0; y1 < size; y1++){
+        				
+        				Color pxl = new Color(img.getRGB(x+x1, y+y1));
+        				
+        				 r0 += pxl.getRed();
+            			 g0 += pxl.getGreen();
+                    	 b0 += pxl.getBlue();
+                    	 
+                    	
+        			}
+        	}
+        		int avg_r0 = r0/(size * size);
+        		int avg_g0 = g0/(size * size);
+        		int avg_b0 = b0/(size * size);
+        		
+        		//System.out.println(avg_r0);
+        		
+        		Color pxl1= new Color(avg_r0, avg_g0, avg_b0);
+        		
+        		double random = Math.floor(Math.random()*69);
+        		
+        		for (int x1=0; x1 < size; x1++) {
+        			for (int y1=0; y1 < size; y1++){
+        				
+        				Color pxl_yeet = new Color(img.getRGB(x+x1, y+y1));
+        				double r = pxl_yeet.getRed();
+        				double g = pxl_yeet.getGreen();
+                    	double b = pxl_yeet.getBlue();
+                    	
+                    	// attēla outputs ir rgb un setrgb inputs ir r_out utt
+                    	
+                    	
+                    	
+                    	
+        			
+        				
+        				Color pxl_wtf = new Color(r_out, g_out, b_out);
+        				
+        				
+        				
+        				
+        				
+        				img.setRGB(x+x1, y+y1, pxl_wtf.getRGB());
+        				
+        			}
+        		}
+        		
+        		
+        		
+        	}
+        }
+        
+            	
+            	
+            
+        
+ ImageIO.write(img, "jpg", new File("ImageOut/_MG_5281 copy.jpg"));
+        
+        System.out.println(width);
+        System.out.println(height);
+	}
+
+}
