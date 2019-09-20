@@ -1,0 +1,51 @@
+if ( (r+g+b)/3 > 127) {
+                    		
+                    	
+        				r = Math.toRadians(r);
+        				g = Math.toRadians(g);
+        				b = Math.toRadians(b);
+        				
+        				
+                    	r = Math.sin(r+avg_r0)*255;
+                    	g = Math.sin(g+avg_g0)*255;
+                    	b = Math.sin(b+avg_b0)*255;
+                    	//System.out.println(r);
+                    	
+                    	if (r<0) r = (-r);
+                    	if (g<0) g = (-g);
+                    	if (b<0) b = (-b);
+                    	
+                    	
+                    	r = Math.round(b);
+                    	g = Math.round(g);
+                    	b = Math.round(b);
+                    	
+                    	}
+                    	else {
+                    		r = Math.toRadians(r);
+            				g = Math.toRadians(g);
+            				b = Math.toRadians(b);
+            				
+            				
+                        	r = Math.cos(r+avg_r0)*255;
+                        	g = Math.cos(g+avg_g0)*255;
+                        	b = Math.cos(b+avg_b0)*255;
+                        	//System.out.println(r);
+                        	
+                        	if (r<0) r = (-r);
+                        	if (g<0) g = (-g);
+                        	if (b<0) b = (-b);
+                        	
+                        	
+                        	r = Math.round(b);
+                        	g = Math.round(g);
+                        	b = Math.round(b);
+                        	
+                    	}
+                    	if (r > 240) r = avg_r0;
+                    	if (g > 240) g = avg_g0;
+                    	if (b > 240) b = avg_b0;
+                    		
+                    	int r_out = (int) r;
+                    	int g_out = (int) g;
+                    	int b_out = (int) b;
