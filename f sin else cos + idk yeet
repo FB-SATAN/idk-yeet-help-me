@@ -1,0 +1,16 @@
+double a = 20;
+                    	//381
+                    	if (r + g + b < avg_r0 + avg_g0 + avg_r0 - 150) {
+                    	r = Math.sin(r+a)*255;	
+                    	g = Math.sin(g+a)*255;
+                    	b = Math.sin(b+a)*255;
+                    	}
+                    	else {
+                    		r = Math.cos(r/(avg_r0+1))*255;	
+                        	g = Math.cos(g/(avg_g0+1))*255;
+                        	b = Math.cos(b/(avg_b0+1))*255;
+                    	}
+                    
+                    	r = Math.abs(r);
+                    	g = Math.abs(g);
+                    	b = Math.abs(b);
