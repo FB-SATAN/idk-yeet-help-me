@@ -1,0 +1,29 @@
+if (r < 5) r = 255;
+                    	else {
+                    		if (r + g + b  > 500) {
+                            	r = Math.cos(0.2 * r) * Math.cos(0.2 * r) * 250;
+                    	}
+                    		else {
+                    			r = Math.sin(0.02 * r) + Math.sin(0.2 * r) * 80 + 80;
+                    		}
+                    	}
+                    	
+                    		if (g < 5) g = 255;
+                    	else {
+                    		if (r + g + b  > 500) {
+                    			g = Math.cos(0.2 * g) * Math.cos(0.2 * g) * 250;
+                    		}
+                    		else {
+                    			g = Math.cos(0.2 * g) * Math.cos(0.2 * g) * 250;
+                    	}
+                    	}
+                    	
+                    	if (b < 5) b = 255; 
+                    	else {
+                    		if (r + g + b  > 500) {
+                    			b = Math.cos(0.2 * b) * Math.cos(0.2 * b) * 250;
+                    		}
+                    		else {
+                    			b = Math.sin(0.02 * b) + Math.sin(0.2 * b) * 80 + 80;
+                    		}
+                    	}
