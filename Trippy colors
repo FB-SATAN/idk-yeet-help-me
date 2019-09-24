@@ -8,3 +8,4 @@ if (r + g + b  > 500) {
                     		g = Math.sin(0.02 * g) + Math.sin(0.2 * g) * 80 + 80;
                     		b = Math.sin(0.02 * b) + Math.sin(0.2 * b) * 80 + 80;
                     	}
+//puķēm baigi labi
